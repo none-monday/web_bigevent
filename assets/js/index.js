@@ -22,7 +22,7 @@ function getUserInfo() {
                 return layui.layer.msg('获取用户信息失败');
             }
             renderAvatar(res.data);
-        },
+        }
         //无论成功失败都会调用
         // complete: function(res) {
         //     if(res.responseJSON.status === 1 && res.responseJSON.message === '身份认证失败！') {
@@ -38,10 +38,11 @@ function renderAvatar(user) {
     $('#welcome').html('欢迎&nbsp;&nbsp;' + name);
     if (user.user_pic !== null) {
         $('.layui-nav-img').attr('src',user.user_pic).show();
-        $('.text-avatar').hide();
+        $('.text-avater').hide();
     } else {
         $('.layui-nav-img').hide();
         let first = name[0].toUpperCase();
-        $('.text-avatar').html(first).show();
+        $('.text-avater').html(first).show();
+        console.log(first);
     }
 }
